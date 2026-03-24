@@ -36,7 +36,7 @@ export default async function ExplorePage({ searchParams }: Props) {
 
   return (
     <div className="flex min-h-screen bg-[#F9F8F4] text-[#1f1f1c]">
-      <AppSidebar regionLabel={currentCity.label} />
+      <AppSidebar />
 
       <main className="flex-1 px-10 py-10">
         <div className="mb-8">
