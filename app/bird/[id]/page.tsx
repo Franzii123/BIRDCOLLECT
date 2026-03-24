@@ -33,7 +33,7 @@ export default async function BirdDetailPage({ params, searchParams }: Props) {
 
   return (
     <div className="flex min-h-screen bg-[#F9F8F4] text-[#1f1f1c]">
-      <AppSidebar regionLabel={searchParams?.region || "Deutschland"} />
+      <AppSidebar />
 
       <main className="flex-1 px-10 py-10">
         <a
