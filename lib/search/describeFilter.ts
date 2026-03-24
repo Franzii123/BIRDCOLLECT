@@ -1,10 +1,14 @@
 // lib/search/describeFilter.ts
+type BirdAttributes = {
+  size: 'small' | 'medium' | 'large';
+  colors: string[];
+  habitats: string[];
+};
 
 const BIRD_ATTRIBUTES: Record<string, BirdAttributes> = {
-  '13632': { size: 'small', colors: ['red', 'brown'], habitats: ['forest', 'park'] },    // Rotkehlchen
-  '12716': { size: 'small', colors: ['blue', 'yellow'], habitats: ['city', 'park'] },    // Blaumeise
-  '13957': { size: 'medium', colors: ['blue', 'orange'], habitats: ['water'] },          // Eisvogel
-  // ... extend with top 50 German birds
+  '13632': { size: 'small', colors: ['red', 'brown'], habitats: ['forest', 'park'] },
+  '12716': { size: 'small', colors: ['blue', 'yellow'], habitats: ['city', 'park'] },
+  '13957': { size: 'medium', colors: ['blue', 'orange'], habitats: ['water'] },
 };
 
 interface Filters {
