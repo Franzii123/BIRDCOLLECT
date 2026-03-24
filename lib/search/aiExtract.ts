@@ -1,5 +1,9 @@
 // lib/search/aiExtract.ts
-// Requires: OPENAI_API_KEY in env
+type Filters = {
+  size: "small" | "medium" | "large" | null;
+  colors: string[];
+  habitats: string[];
+};
 
 export async function extractFiltersFromText(description: string): Promise<Filters> {
   const res = await fetch('https://api.openai.com/v1/chat/completions', {
