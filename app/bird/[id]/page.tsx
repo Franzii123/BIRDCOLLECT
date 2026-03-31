@@ -32,10 +32,10 @@ export default async function BirdDetailPage({ params, searchParams }: Props) {
   const wiki = await getWikipediaSummary(bird.name);
 
   return (
-    <div className="flex min-h-screen bg-[#F9F8F4] text-[#1f1f1c]">
+    <div className="flex min-h-screen bg-[#F9F8F4] text-[#1f1f1c] pb-20 md:pb-0">
       <AppSidebar />
 
-      <main className="flex-1 px-10 py-10">
+      <main className="flex-1 px-4 md:px-10 py-6 md:py-10 pb-24 md:pb-10">
         <a
           href="/explore"
           className="mb-6 inline-block text-sm text-stone-500 hover:text-black"
