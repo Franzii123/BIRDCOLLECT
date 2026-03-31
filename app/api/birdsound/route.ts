@@ -5,8 +5,8 @@ export async function GET(req: NextRequest) {
   if (!name) return NextResponse.json({ error: "no name" }, { status: 400 });
 
   const res = await fetch(
-    `https://xeno-canto.org/api/2/recordings?query=${encodeURIComponent(name)}+cnt:germany&page=1`,
-    { headers: { "User-Agent": "BirdCollect/1.0" } }
+    `https://xeno-canto.org/api/3/recordings?query=${encodeURIComponent(name)}+cnt:germany`,
+    { headers: { "Authorization": `Bearer ${process.env.XENO_CANTO_API_KEY}` } }
   );
   const data = await res.json();
   const recording = data.recordings?.[0];
