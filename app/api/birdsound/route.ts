@@ -4,7 +4,6 @@ export async function GET(req: NextRequest) {
   const name = req.nextUrl.searchParams.get("name");
   if (!name) return NextResponse.json({ error: "no name" }, { status: 400 });
 
-  // Wissenschaftlichen Namen in gen/sp Tags umwandeln
   const parts = name.trim().split(" ");
   const gen = parts[0];
   const sp = parts[1] || "";
@@ -18,8 +17,10 @@ export async function GET(req: NextRequest) {
   const recording = data.recordings?.[0];
   if (!recording) return NextResponse.json({ error: "not found" }, { status: 404 });
 
+  const file = recording.file.startsWith("http") ? recording.file : `https:${recording.file}`;
+
   return NextResponse.json({
-    file: `https:${recording.file}`,
+    file,
     rec: recording.rec,
     loc: recording.loc,
     type: recording.type,
