@@ -82,3 +82,18 @@ function mapObservation(o: any) {
     wikipedia: o.taxon?.wikipedia_url || null,
   };
 }
+
+export async function searchBirdsByLocation(lat: number, lng: number) {
+  const url =
+    `${BASE}/observations?taxon_id=3` +
+    `&lat=${lat}&lng=${lng}&radius=30` +
+    `&per_page=24&order=votes&locale=de` +
+    `&quality_grade=research`;
+  const data = await fetchCached(url);
+  return (data.results || [])
+    .filter((o: any) => o.taxon)
+    .map((o: any) => mapObservation(o))
+    .filter((b: any, i: number, arr: any[]) =>
+      arr.findIndex(x => x.id === b.id) === i
+    );
+}
