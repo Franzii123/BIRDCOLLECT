@@ -42,7 +42,7 @@ export default function AppSidebar() {
       </aside>
 
       {/* MOBILE BOTTOM NAV */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-stone-200 px-6 py-3 flex justify-around">
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-stone-300 shadow-[0_-2px_12px_rgba(0,0,0,0.06)] px-6 py-3 flex justify-around">
         <Link href="/explore" className={bottomNavClass(isExplore)}>
           <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
             <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
