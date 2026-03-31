@@ -60,12 +60,10 @@ export default function BirdDetail({ bird, summary, wikiUrl }: Props) {
               </a>
             )}
           </div>
-
           <SeenButton bird={bird} />
         </div>
       </div>
 
-      {/* Mini Karte + Sound nebeneinander */}
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
         <div>
           <p className="mb-3 text-xs uppercase tracking-[0.25em] text-[#888780]">Verbreitung</p>
