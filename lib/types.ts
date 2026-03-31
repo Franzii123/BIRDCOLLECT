@@ -12,5 +12,21 @@ export type Bird = {
 export type SavedBird = Bird & {
   region: string;
   placeId?: string;
+  city?: string;
+  lat?: number;
+  lng?: number;
   savedAt: string;
+};
+
+export type Sighting = {
+  id: string;
+  bird_id: string;
+  name: string;
+  scientific?: string | null;
+  image_url?: string | null;
+  city: string;
+  lat?: number | null;
+  lng?: number | null;
+  notes?: string | null;
+  date_seen?: string;
 };
